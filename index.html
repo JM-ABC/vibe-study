@@ -55,8 +55,11 @@
     .nav-cta:hover { background:var(--lime); color:var(--ink); }
     .nav-cta:disabled,
     .nav-cta[disabled] {
-      background:var(--muted); color:rgba(255,255,255,.6);
-      cursor:not-allowed; opacity:.6;
+      background:#D9D9D6; color:var(--muted);
+      cursor:not-allowed; opacity:1;
+    }
+    .nav-cta[disabled]:hover {
+      background:#D9D9D6; color:var(--muted);
     }
 
     /* ── HERO ── */
@@ -327,8 +330,15 @@
       font-family:'Noto Sans KR',sans-serif; font-weight:700; font-size:15px;
       padding:15px; border:none; border-radius:11px;
       cursor:pointer; transition:all .3s; margin-top:6px;
+      display:inline-flex; justify-content:center; align-items:center;
+      text-decoration:none;
     }
     .sub:hover { background:var(--lime); color:var(--ink); }
+    .sub.disabled {
+      background:var(--muted); color:rgba(255,255,255,.75);
+      cursor:not-allowed; opacity:.6; text-decoration:none;
+      pointer-events:none;
+    }
 
     /* ── SUCCESS ── */
     .ok { display:none; text-align:center; padding:52px 16px; }
@@ -566,9 +576,9 @@
             아래 버튼을 누르면 구글폼으로 이동합니다.<br>
             약 2분이면 작성 완료!
           </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSemsshFkOmJP36VQX78Fo5nmVrm6KvZ9V87Azzn5sOv7LUeQg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="sub" style="display:inline-block; text-decoration:none; text-align:center; padding:15px 48px; border-radius:100px;">
-            신청서 작성하기 →
-          </a>
+          <span class="sub disabled" style="display:inline-block; text-align:center; padding:15px 48px; border-radius:100px;">
+            신청 마감
+          </span>
         </div>
       </div>
     </div>
