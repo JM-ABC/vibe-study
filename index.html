@@ -50,9 +50,14 @@
       font-size:13px; font-weight:700;
       padding:9px 20px; border-radius:100px;
       text-decoration:none; transition:all .25s;
-      margin-left:4px;
+      margin-left:4px; cursor:pointer;
     }
     .nav-cta:hover { background:var(--lime); color:var(--ink); }
+    .nav-cta:disabled,
+    .nav-cta[disabled] {
+      background:var(--muted); color:rgba(255,255,255,.6);
+      cursor:not-allowed; opacity:.6;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -132,6 +137,43 @@
     .hero-sub { font-size:12px; color:var(--muted); }
 
     @keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── STAMP ── */
+    .stamp {
+      position: absolute;
+      width: 180px; height: 180px;
+      top: 50%; right: 60px;
+      display: flex; align-items: center; justify-content: center;
+      transform: translateY(-50%) rotate(-20deg);
+      pointer-events: none;
+      z-index: 10;
+      animation: stampPop .8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      background: radial-gradient(circle at center, rgba(247,245,240,.95) 0%, rgba(247,245,240,.8) 100%);
+      border-radius: 50%;
+    }
+    .stamp-inner {
+      width: 160px; height: 160px;
+      border: 4px solid #DC143C;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; font-weight: 900;
+      color: #DC143C;
+      letter-spacing: 0.2em;
+      transform: rotate(20deg);
+      position: relative;
+      background: white;
+      box-shadow: 0 0 30px rgba(0,0,0,.08);
+    }
+    @keyframes stampPop {
+      from {
+        opacity: 0;
+        transform: translateY(-50%) rotate(-20deg) scale(0.2);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-50%) rotate(-20deg) scale(1);
+      }
+    }
 
     /* ── TICKER ── */
     .ticker {
@@ -345,7 +387,7 @@
       <a href="#about" class="nav-link">소개</a>
       <a href="#schedule" class="nav-link">운영방식</a>
       <a href="#curriculum" class="nav-link">커리큘럼</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSemsshFkOmJP36VQX78Fo5nmVrm6KvZ9V87Azzn5sOv7LUeQg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="nav-cta">신청하기</a>
+      <span class="nav-cta" disabled>신청 마감</span>
     </div>
   </nav>
 
@@ -353,7 +395,7 @@
   <section class="hero">
     <div class="badge">
       <span class="dot"></span>
-      2026 · 잠실 기반 · 모집 중
+      2026 · 잠실 기반 · 모집 마감
     </div>
 
     <h1 class="hero-headline">
@@ -368,8 +410,8 @@
         개발 경험 없어도 괜찮아요.
       </p>
       <div class="hero-cta-wrap">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSemsshFkOmJP36VQX78Fo5nmVrm6KvZ9V87Azzn5sOv7LUeQg/viewform?usp=publish-editor" target="_blank" rel="noopener" class="btn-main">신청하기 →</a>
-        <span class="hero-sub">6~10명 소수 정예 · 8주 과정</span>
+        <button class="btn-main" disabled style="opacity: 0.5; cursor: not-allowed;">신청 마감</button>
+        <span class="hero-sub">다음 기수를 기다려주세요</span>
       </div>
     </div>
   </section>
