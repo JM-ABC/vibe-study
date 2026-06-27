@@ -241,6 +241,12 @@
     }
     .card-list li::before { content:'—'; color:var(--line); flex-shrink:0; font-size:11px; margin-top:2px; }
 
+    /* ── PROOF SHOTS ── */
+    .proof-shots { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+    .proof-shot { background:var(--white); border:1px solid var(--line); border-radius:var(--r); padding:14px; margin:0; }
+    .proof-shot img { width:100%; display:block; border-radius:8px; }
+    .proof-shot figcaption { font-size:12px; color:var(--muted); margin-top:10px; text-align:center; }
+
     /* ── CURRICULUM ── */
     .curr { margin-top:40px; border-top:1px solid var(--line); }
     .curr-row {
@@ -379,6 +385,7 @@
       .sec-row { grid-template-columns:1fr; gap:20px; }
       .sec-label { position:static; }
       .cards { grid-template-columns:1fr; }
+      .proof-shots { grid-template-columns:1fr; }
       .plats { grid-template-columns:1fr 1fr; }
       .rules { grid-template-columns:1fr 1fr; }
       footer { flex-direction:column; gap:6px; text-align:center; padding:24px var(--px); }
@@ -500,6 +507,16 @@
               <li>멤버별 회고 · 다음 단계 제안까지 마무리</li>
             </ul>
           </div>
+        </div>
+        <div class="proof-shots">
+          <figure class="proof-shot rv">
+            <img src="assets/1ki-end-announcement.png" alt="1기 종료를 알리는 Slack 메시지" loading="lazy">
+            <figcaption>1기 종료 안내 (Slack)</figcaption>
+          </figure>
+          <figure class="proof-shot rv">
+            <img src="assets/1ki-final-review.jpg" alt="1기 최종 회고 페이지, 멤버 이름은 가림 처리" loading="lazy">
+            <figcaption>최종 회고 페이지 (이름은 가렸습니다)</figcaption>
+          </figure>
         </div>
       </div>
     </div>
