@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/26949774/README.md)
 # Vibe.Study — 바이브코딩 스터디
 
 > Claude Code 기반 실전 바이브코딩 스터디 모집 페이지

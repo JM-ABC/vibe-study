@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=1080"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      width:1080px; height:1350px;
+      font-family:'Noto Sans KR', sans-serif;
+      background:#F7F5F0;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+
+    /* 상단 메인 */
+    .top {
+      flex:1;
+      padding:72px 64px 48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+    }
+    .top::before {
+      content:'';
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 70% 40% at 80% 15%, rgba(197,255,0,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 85%, rgba(197,255,0,.05) 0%, transparent 50%);
+      pointer-events:none;
+    }
+
+    .badge {
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid #E0DDD8; border-radius:100px;
+      padding:10px 22px; font-size:18px; color:#888480;
+      width:fit-content; margin-bottom:36px;
+    }
+    .dot {
+      width:8px; height:8px; background:#6EC97F; border-radius:50%;
+    }
+
+    .headline {
+      font-size:88px;
+      font-weight:900;
+      line-height:1.2;
+      letter-spacing:-.04em;
+      color:#111;
+      margin-bottom:44px;
+    }
+    .hl {
+      background:#C5FF00;
+      border-radius:8px;
+      padding:2px 14px 6px;
+    }
+
+    .info-grid {
+      display:flex;
+      gap:14px;
+      margin-bottom:40px;
+    }
+    .info-item {
+      background:#fff;
+      border:1px solid #E0DDD8;
+      border-radius:14px;
+      padding:22px 28px;
+      font-size:20px;
+      color:#111;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex:1;
+    }
+    .info-item span.emoji {
+      font-size:28px;
+    }
+    .info-item .sub {
+      font-weight:400;
+      color:#888480;
+      font-size:15px;
+      margin-top:3px;
+    }
+
+    .desc {
+      font-size:22px;
+      color:#888480;
+      line-height:1.7;
+    }
+    .desc b { color:#111; font-weight:700; }
+
+    /* 하단 다크 섹션 */
+    .bottom {
+      background:#111;
+      color:#F7F5F0;
+      padding:48px 64px 56px;
+      position:relative;
+    }
+    .bottom::before {
+      content:'';
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 10%, rgba(197,255,0,.1) 0%, transparent 60%);
+      pointer-events:none;
+    }
+
+    .bottom-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:28px;
+      position:relative;
+    }
+    .bottom-label {
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.35);
+    }
+    .bottom-cta {
+      background:#C5FF00;
+      color:#111;
+      font-family:'Noto Sans KR', sans-serif;
+      font-size:18px;
+      font-weight:900;
+      padding:16px 36px;
+      border:none;
+      border-radius:100px;
+      text-align:center;
+      letter-spacing:-.02em;
+    }
+
+    .week-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px 24px;
+      position:relative;
+    }
+    .week {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:16px;
+      color:rgba(255,255,255,.45);
+      padding:10px 0;
+    }
+    .week-num {
+      font-size:14px;
+      font-weight:700;
+      color:rgba(255,255,255,.25);
+      width:22px;
+      flex-shrink:0;
+    }
+    .week-text {
+      flex:1;
+    }
+    .week-bar {
+      width:48px;
+      height:4px;
+      background:rgba(255,255,255,.08);
+      border-radius:2px;
+      overflow:hidden;
+      flex-shrink:0;
+    }
+    .week-bar .fill {
+      height:100%;
+      background:#C5FF00;
+      border-radius:2px;
+    }
+    .week.demo .week-num { color:#C5FF00; }
+    .week.demo { color:#C5FF00; font-weight:700; }
+
+    .logo {
+      position:absolute;
+      bottom:24px;
+      right:64px;
+      font-size:14px;
+      font-weight:900;
+      color:rgba(255,255,255,.2);
+      letter-spacing:-.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="badge">
+      <span class="dot"></span>
+      2026 · 잠실 기반 · 모집 중
+    </div>
+
+    <div class="headline">
+      바이브코딩을<br>
+      매일의 <span class="hl">루틴</span>으로
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="emoji">☀️</span>
+        <div>매일 아침 30분<div class="sub">Google Meet 온라인</div></div>
+      </div>
+      <div class="info-item">
+        <span class="emoji">📍</span>
+        <div>주 1회 오프라인<div class="sub">잠실 카페 or 코워킹</div></div>
+      </div>
+      <div class="info-item">
+        <span class="emoji">👥</span>
+        <div>6~10명<div class="sub">소수 정예</div></div>
+      </div>
+    </div>
+
+    <p class="desc">
+      <b>Claude Code</b> 기반 실전 스터디. 개발 경험 없어도 OK.<br>
+      비용은 N빵 · 신청은 댓글로!
+    </p>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-header">
+      <div class="bottom-label">8 Weeks Curriculum</div>
+      <div class="bottom-cta">신청은 댓글에 📌</div>
+    </div>
+
+    <div class="week-grid">
+      <div class="week"><span class="week-num">01</span><span class="week-text">OT + 프로젝트 목표 설정</span><div class="week-bar"><div class="fill" style="width:100%"></div></div></div>
+      <div class="week"><span class="week-num">02</span><span class="week-text">프로젝트 공유 + AI 툴 브리핑</span><div class="week-bar"><div class="fill" style="width:85%"></div></div></div>
+      <div class="week"><span class="week-num">03</span><span class="week-text">프로젝트 공유 + AI 툴 브리핑</span><div class="week-bar"><div class="fill" style="width:70%"></div></div></div>
+      <div class="week"><span class="week-num">04</span><span class="week-text">중간 점검</span><div class="week-bar"><div class="fill" style="width:55%"></div></div></div>
+      <div class="week"><span class="week-num">05</span><span class="week-text">프로젝트 공유 + AI 툴 브리핑</span><div class="week-bar"><div class="fill" style="width:40%"></div></div></div>
+      <div class="week"><span class="week-num">06</span><span class="week-text">프로젝트 공유 + AI 툴 브리핑</span><div class="week-bar"><div class="fill" style="width:25%"></div></div></div>
+      <div class="week"><span class="week-num">07</span><span class="week-text">데모데이 리허설</span><div class="week-bar"><div class="fill" style="width:12%"></div></div></div>
+      <div class="week demo"><span class="week-num">08</span><span class="week-text">최종 데모데이 🎉</span><div class="week-bar"><div class="fill" style="width:100%"></div></div></div>
+    </div>
+
+    <div class="logo">Vibe.Study</div>
+  </div>
+
+</body>
+</html>
