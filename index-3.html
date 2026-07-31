@@ -134,6 +134,7 @@
       font-weight:400; max-width:400px; word-break:keep-all;
     }
     .hero-desc b { color:var(--ink); font-weight:700; }
+    .nowrap { white-space:nowrap; }
     .hero-cta-wrap { display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
     .btn-main {
       background:var(--ink); color:var(--bg);
@@ -423,6 +424,7 @@
       nav { padding:0 var(--px); }
       .nav-link { display:none; }
       .hero { padding: calc(var(--nav-h) + 20px) var(--px) 48px; min-height: auto; }
+      .hero-desc br, .apply-note br { display:none; }
       .hero-foot { flex-direction:column; align-items:flex-start; gap:22px; }
       .hero-cta-wrap { align-items:flex-start; }
       .sec { padding:64px var(--px); }
@@ -480,7 +482,7 @@
       <p class="hero-desc">
         4주간 <b>매일 만들고, 기록하고, 설명하는 습관</b>을 만들어요.<br>
         그렇게 쌓인 기록엔 매주 <b>Claude의 피드백</b>이 붙고요.<br>
-        Claude Code 기반 실전 스터디 3기 · 8월 5일 ~ 31일.<br>
+        Claude Code 기반 실전 스터디 3기 · <span class="nowrap">8월 5일 ~ 31일</span>.<br>
         개발 경험 없어도 괜찮아요.
       </p>
       <div class="hero-cta-wrap">
@@ -819,7 +821,7 @@
         <div class="form-box" style="text-align:center; padding:52px 40px;">
           <div style="font-size:48px; margin-bottom:20px;">📝</div>
           <h3 style="font-size:20px; font-weight:700; margin-bottom:10px;">구글폼 작성으로 신청하기</h3>
-          <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:28px;">
+          <p class="apply-note" style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:28px;">
             아래 버튼으로 구글폼을 작성하시면 신청이 시작됩니다.<br>
             이후 안내드리는 계좌로 디파짓 5만원 입금이 확인되면 참여가 확정돼요.<br>
             확정 후에는 입력하신 연락처로 카톡 단톡방에 초대해드려요.
